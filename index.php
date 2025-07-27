@@ -1,3 +1,9 @@
+<?php
+// Koneksi database
+$conn = mysqli_connect('localhost', 'root', 'WahyuJR17_', 'organisasi');
+if (!$conn) die('Koneksi gagal: ' . mysqli_connect_error());
+$produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +58,7 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#team">Team</a></li>
+          <!-- <li><a href="#team">Team</a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -68,7 +74,7 @@
 
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="hero-content">
               <h1>HIMPUNAN PRODUSEN BENIH PERKEBUNAN BUAH DAN KEHUTANAN INDONESIA</h1>
               <p>Organisasi yang mewadahi para produsen benih perkebunan buah dan kehutanan di Indonesia untuk meningkatkan kualitas, kolaborasi, dan inovasi dalam bidang perbenihan nasional.</p>
@@ -77,11 +83,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <div class="hero-image">
               <img src="logo.png" class="img-fluid floating" alt="Logo HPBPKI">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -107,12 +113,12 @@
               <h2>Tentang HPBPKI</h2>
               <p class="lead">HPBPKI adalah organisasi yang beranggotakan para produsen benih perkebunan buah dan kehutanan di Indonesia. Kami berkomitmen untuk meningkatkan mutu, distribusi, dan inovasi benih demi kemajuan sektor perkebunan dan kehutanan nasional.</p>
               <p>HPBPKI berperan sebagai wadah komunikasi, edukasi, dan advokasi bagi para produsen benih, serta menjalin kemitraan dengan pemerintah, swasta, dan masyarakat untuk mendukung ketahanan pangan dan kelestarian lingkungan.</p>
-              <div class="cta-wrapper">
+              <!-- <div class="cta-wrapper">
                 <a href="#contact" class="btn-cta">
                   <span>Hubungi Kami</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -130,33 +136,34 @@
       </div>
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <img src="logo.png" class="card-img-top" alt="Benih Durian Montong">
-              <div class="card-body">
-                <h5 class="card-title">Benih Durian Montong</h5>
-                <p class="card-text">Benih durian varietas Montong unggul, bersertifikat, cocok untuk budidaya di berbagai daerah Indonesia.</p>
+          <?php if (mysqli_num_rows($produk) > 0): ?>
+            <?php while($row = mysqli_fetch_assoc($produk)): ?>
+              <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                  <?php if (!empty($row['foto'])): ?>
+                    <img src="uploads/<?= htmlspecialchars($row['foto']) ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nama']) ?>">
+                  <?php else: ?>
+                    <img src="logo.png" class="card-img-top" alt="<?= htmlspecialchars($row['nama']) ?>">
+                  <?php endif; ?>
+                  <div class="card-body">
+                    <h5 class="card-title"><?= htmlspecialchars($row['nama']) ?></h5>
+                    <ul class="list-unstyled mb-2">
+                      <li><strong>Lokasi Kantor:</strong> <?= htmlspecialchars($row['lokasi_kantor']) ?></li>
+                      <li><strong>Luas Pembibitan:</strong> <?= htmlspecialchars($row['luas_pembibitan']) ?></li>
+                      <li><strong>Lokasi Pembibitan:</strong> <span><?= $row['lokasi_pembibitan'] ?></span></li>
+                      <li><strong>Kapasitas Produksi:</strong> <span><?= $row['kapasitas_produksi'] ?></span></li>
+                      <li><strong>Pengalaman Menangkar:</strong> <?= htmlspecialchars($row['pengalaman_menangkar']) ?></li>
+                      <li><strong>Nomor Kontak:</strong> <?= htmlspecialchars($row['nomor_kontak']) ?></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
+            <?php endwhile; ?>
+          <?php else: ?>
+            <div class="col-12">
+              <div class="alert alert-info text-center">Belum ada produk.</div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <img src="logo.png" class="card-img-top" alt="Benih Jati Super">
-              <div class="card-body">
-                <h5 class="card-title">Benih Jati Super</h5>
-                <p class="card-text">Benih pohon jati kualitas tinggi untuk kehutanan, pertumbuhan cepat dan tahan penyakit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <img src="logo.png" class="card-img-top" alt="Benih Alpukat Aligator">
-              <div class="card-body">
-                <h5 class="card-title">Benih Alpukat Aligator</h5>
-                <p class="card-text">Benih alpukat varietas Aligator, buah besar dan produktif, cocok untuk perkebunan buah modern.</p>
-              </div>
-            </div>
-          </div>
+          <?php endif; ?>
         </div>
       </div>
     </section><!-- /Galeri Produk Section -->
@@ -462,7 +469,7 @@
     </section><!-- /Testimonials Section -->
 
     <!-- Team Section -->
-    <section id="team" class="team section">
+    <section id="team" class="team section" style="display: none">
 
       <!-- Section Title -->
       <div class="container section-title">
@@ -639,8 +646,8 @@
           <div class="col-lg-5 order-lg-2 order-1">
             <div class="contact-sidebar">
               <div class="contact-header">
-                <h3>Alamat Sekretariat</h3>
-                <p>Jl. Contoh Alamat No. 123, Jakarta, Indonesia</p>
+                <h3>Alamat</h3>
+                <p>Jl. Puncak no 25, Kecamatan Medan, Kota Medan, Sumatera Utara, 20217</p>
               </div>
               <div class="contact-methods">
                 <div class="contact-method">
@@ -661,7 +668,7 @@
                     <p>+62 812-3456-7890</p>
                   </div>
                 </div>
-              </div>
+                  </div>
               <div class="connect-section">
                 <span class="connect-label">Ikuti kami</span>
                 <div class="social-links">
