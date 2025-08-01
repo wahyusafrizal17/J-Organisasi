@@ -22,7 +22,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Questrial:wght@400&display=swap" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="https://bootstrapmade.com/content/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://bootstrapmade.com/content/vendors/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://bootstrapmade.com/content/vendors/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="https://bootstrapmade.com/content/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
   <!-- Main CSS File -->
@@ -33,7 +33,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="logo.png" alt="Logo HPBPKI" style="height:40px; margin-right:10px;">
-        <h1 class="sitename" style="font-size:1.1em;">ANGGOTA</h1>
+        <!-- <h1 class="sitename" style="font-size:1.1em;">ANGGOTA</h1> -->
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -42,7 +42,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
           <li><a href="#services">BERITA</a></li>
           <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none fas fa-bars"></i>
       </nav>
     </div>
   </header>
@@ -88,12 +88,12 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">UD Rumah Pala, Lampung Selatan</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Bibit pala non sambungan: 200.000-300.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Bibit pala sambung: 5.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Bibit kakao: 100.000-150.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Bibit cengkeh: 100.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Bibit kelapa: 50.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Pinang dan tanaman kehutanan: 120.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Bibit pala non sambungan: 200.000-300.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Bibit pala sambung: 5.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Bibit kakao: 100.000-150.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Bibit cengkeh: 100.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Bibit kelapa: 50.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Pinang dan tanaman kehutanan: 120.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -105,9 +105,9 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">CV Agritech Indonesia, Makassar</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Pala: 100.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Cengkeh: 100.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kopi: 200.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Pala: 100.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Cengkeh: 100.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kopi: 200.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -119,8 +119,8 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">CV Ilham Karya Mandiri, Kabupaten Garut Jawa Barat</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kopi Arabika Lini S 795: 215.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Arabika Sigararutang: 345.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kopi Arabika Lini S 795: 215.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Arabika Sigararutang: 345.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -132,9 +132,9 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">CV Zaroha, Kabupaten Kepulauan Meranti Timur</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kopi liberika Meranti (Liberoid Meranti 1): 3.000.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kelapa Dalam: 147.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Sagu: 2.650.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kopi liberika Meranti (Liberoid Meranti 1): 3.000.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kelapa Dalam: 147.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Sagu: 2.650.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -146,8 +146,8 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">CV Harapan Jaya, Kabupaten Soppeng Sulawesi Selatan</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kakao: 500.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Sawit: 250.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kakao: 500.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Sawit: 250.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -159,10 +159,10 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
               <div class="card-body">
                 <h5 class="card-title text-primary">PT Citra Nurani Nusantara, Makassar Sulawesi Selatan</h5>
                 <ul class="list-unstyled">
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kopi arabika: 500.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kopi Robusta: 500.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Cengkeh: 250.000 batang</li>
-                  <li class="mb-2"><i class="bi bi-tree me-2"></i>Kakao: 750.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kopi arabika: 500.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kopi Robusta: 500.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Cengkeh: 250.000 batang</li>
+                  <li class="mb-2"><i class="fas fa-seedling me-2"></i>Kakao: 750.000 batang</li>
                 </ul>
               </div>
             </div>
@@ -174,8 +174,8 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
     <!-- Services Section -->
     <section id="services" class="services section">
       <div class="container section-title">
-        <h2>Berita</h2>
-        <p>Berikut adalah beberapa produk benih unggulan dari anggota HPBPKI.</p>
+        <h2>Protal Berita</h2>
+        <p>Informasi dan berita terbaru seputar benih perkebunan, kehutanan, dan kegiatan HPBPKI.</p>
       </div>
       <div class="container">
         <div class="row gy-4">
@@ -210,55 +210,12 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
         </div>
       </div>
     </section><!-- /Galeri Produk Section -->
-
-    <!-- Portal Berita Section -->
-    <section id="team" class="news section">
-      <div class="container section-title">
-        <h2>Portal Berita</h2>
-        <p>Informasi dan berita terbaru seputar benih perkebunan, kehutanan, dan kegiatan HPBPKI.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">HPBPKI Gelar Pelatihan Sertifikasi Benih Nasional</h5>
-                <small class="text-muted">12 Juni 2024</small>
-                <p class="card-text mt-2">HPBPKI menyelenggarakan pelatihan sertifikasi benih untuk meningkatkan kompetensi produsen benih di seluruh Indonesia.</p>
-                <a href="#" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Inovasi Benih Unggul untuk Perkebunan Buah Tropis</h5>
-                <small class="text-muted">5 Juni 2024</small>
-                <p class="card-text mt-2">Anggota HPBPKI berhasil mengembangkan benih unggul baru yang meningkatkan produktivitas dan ketahanan tanaman buah tropis.</p>
-                <a href="#" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Kolaborasi HPBPKI dan Pemerintah untuk Rehabilitasi Hutan</h5>
-                <small class="text-muted">28 Mei 2024</small>
-                <p class="card-text mt-2">HPBPKI bersama Kementerian Lingkungan Hidup dan Kehutanan meluncurkan program penanaman pohon di kawasan hutan kritis.</p>
-                <a href="#" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Portal Berita Section -->
-
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
     <div class="container">
       <div class="row gy-5">
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="footer-content">
             <a href="index.html" class="logo d-flex align-items-center mb-4">
               <img src="logo.png" alt="Logo HPBPKI" style="height:32px; margin-right:10px;">
@@ -271,7 +228,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
                 <div class="input-group">
                   <input type="email" name="email" class="form-control" placeholder="Masukkan email Anda" required="">
                   <button type="submit" class="btn-subscribe">
-                    <i class="bi bi-send"></i>
+                    <i class="fas fa-paper-plane"></i>
                   </button>
                 </div>
                 <div class="loading">Loading</div>
@@ -281,56 +238,24 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
             </div>
           </div>
         </div>
-        <div class="col-lg-2 col-6">
-          <div class="footer-links">
-            <h4>Organisasi</h4>
-            <ul>
-              <li><a href="#about"><i class="bi bi-chevron-right"></i> Tentang</a></li>
-              <li><a href="#services"><i class="bi bi-chevron-right"></i> Layanan</a></li>
-              <li><a href="#contact"><i class="bi bi-chevron-right"></i> Kontak</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-2 col-6">
-          <div class="footer-links">
-            <h4>Program</h4>
-            <ul>
-              <li><a href="#"><i class="bi bi-chevron-right"></i> Pelatihan</a></li>
-              <li><a href="#"><i class="bi bi-chevron-right"></i> Workshop</a></li>
-              <li><a href="#"><i class="bi bi-chevron-right"></i> Kemitraan</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <div class="footer-contact">
             <h4>Kontak Kami</h4>
             <div class="contact-item">
               <div class="contact-icon">
-                <i class="bi bi-geo-alt"></i>
+                <i class="fas fa-map-marker-alt"></i>
               </div>
               <div class="contact-info">
-                <p>Jl. Contoh Alamat No. 123, Jakarta, Indonesia</p>
+              Jl. Pencak no 25. Kecamatan Medan Kota, Kota Medan, Provinsi Sumatera Utara 20217</p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon">
-                <i class="bi bi-telephone"></i>
+                <i class="fas fa-phone"></i>
               </div>
               <div class="contact-info">
-                <p>+62 812-3456-7890</p>
+                <p>082325302436 | 0895384828622</p>
               </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="bi bi-envelope"></i>
-              </div>
-              <div class="contact-info">
-                <p><a href="mailto:info@hpbpki.or.id">info@hpbpki.or.id</a></p>
-              </div>
-            </div>
-            <div class="social-links">
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
         </div>
@@ -359,7 +284,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="fas fa-chevron-up"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
