@@ -39,7 +39,7 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
         <ul>
           <li><a href="#hero" class="active">HOME</a></li>
           <li><a href="#about">PROFIL PERUSAHAAN</a></li>
-          <li><a href="#services">BERITA</a></li>
+          <li><a href="#team">BERITA</a></li>
           <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
         <i class="mobile-nav-toggle d-xl-none fas fa-bars"></i>
@@ -171,45 +171,35 @@ $produk = mysqli_query($conn, "SELECT * FROM produk ORDER BY id DESC");
       </div>
     </section><!-- /About Section -->
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
+
+    <section id="team" class="news section">
       <div class="container section-title">
-        <h2>Protal Berita</h2>
+        <h2>Portal Berita</h2>
         <p>Informasi dan berita terbaru seputar benih perkebunan, kehutanan, dan kegiatan HPBPKI.</p>
       </div>
       <div class="container">
         <div class="row gy-4">
-          <?php if (mysqli_num_rows($produk) > 0): ?>
-            <?php while($row = mysqli_fetch_assoc($produk)): ?>
-              <div class="col-lg-4 col-md-6">
-                <div class="card h-100">
-                  <?php if (!empty($row['foto'])): ?>
-                    <img src="uploads/<?= htmlspecialchars($row['foto']) ?>" class="card-img-top" alt="<?= htmlspecialchars($row['nama']) ?>">
-                  <?php else: ?>
-                    <img src="logo.png" class="card-img-top" alt="<?= htmlspecialchars($row['nama']) ?>">
-                  <?php endif; ?>
-                  <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($row['nama']) ?></h5>
-                    <ul class="list-unstyled mb-2">
-                      <li><strong>Lokasi Kantor:</strong> <?= htmlspecialchars($row['lokasi_kantor']) ?></li>
-                      <li><strong>Luas Pembibitan:</strong> <?= htmlspecialchars($row['luas_pembibitan']) ?></li>
-                      <li><strong>Lokasi Pembibitan:</strong> <span><?= $row['lokasi_pembibitan'] ?></span></li>
-                      <li><strong>Kapasitas Produksi:</strong> <span><?= $row['kapasitas_produksi'] ?></span></li>
-                      <li><strong>Pengalaman Menangkar:</strong> <?= htmlspecialchars($row['pengalaman_menangkar']) ?></li>
-                      <li><strong>Nomor Kontak:</strong> <?= htmlspecialchars($row['nomor_kontak']) ?></li>
-                    </ul>
-                  </div>
-                </div>
+        <?php if (mysqli_num_rows($produk) > 0): ?>
+          <?php while($row = mysqli_fetch_assoc($produk)): ?>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">HPBPKI Gelar Pelatihan Sertifikasi Benih Nasional</h5>
+                <small class="text-muted">12 Juni 2024</small>
+                <p class="card-text mt-2">HPBPKI menyelenggarakan pelatihan sertifikasi benih untuk meningkatkan kompetensi produsen benih di seluruh Indonesia.</p>
+                <a href="detail.php?id=<?= $row['id'] ?>" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
               </div>
-            <?php endwhile; ?>
+            </div>
+          </div>
+          <?php endwhile; ?>
           <?php else: ?>
             <div class="col-12">
-              <div class="alert alert-info text-center">Belum ada produk.</div>
+              <div class="alert alert-info text-center">Belum ada berita tersedia.</div>
             </div>
           <?php endif; ?>
         </div>
       </div>
-    </section><!-- /Galeri Produk Section -->
+    </section>
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
